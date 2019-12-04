@@ -51,11 +51,11 @@ const openLink = async ({ onExit, onSuccess, ...serializable }) => {
   }
 };
 
-const handlePress = (linkProps) => {
+const handlePress = (linkProps, componentProps) => {
   openLink(linkProps);
   if (componentProps && componentProps.onPress) {
     componentProps.onPress();
-  };
+  }
 };
 
 export const PlaidLink = ({
@@ -67,7 +67,7 @@ export const PlaidLink = ({
   return (
     <Component
       {...componentProps}
-      onPress={() => handlePress(linkProps)}
+      onPress={() => handlePress(linkProps, componentProps)}
     />
   );
 };
